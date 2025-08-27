@@ -1,66 +1,71 @@
+[crash.txt](https://github.com/user-attachments/files/21998187/crash.txt)
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Hacked By</title>
+  <title>Hacked By [ CrasH ]</title>
   <style>
     body {
-      background: url('https://i.pinimg.com/originals/51/ae/a3/51aea3393b8234a1e69d8713a0a58bc3.gif') no-repeat center center fixed;
+      background: url('https://cdn.discordapp.com/attachments/1380309637961875517/1410097309949235250/v10044g50000c5c74tjc77u3u3n8uqkg1.gif?ex=68afc6f5&is=68ae7575&hm=aaf724a9e9776dec752b435621fc2ba60ade0c2dfa176f6e6dcacba42ad01aa3&') no-repeat center center fixed;
       background-size: cover;
       font-family: monospace;
       color: white;
       text-align: center;
       padding-top: 100px;
-        }
+    }
+
     h1 {
       color: red;
       font-size: 2.5em;
       text-shadow: 0 0 8px red, 0 0 15px red;
     }
-        }
-        .info {
+
+    .info {
       margin-top: 20px;
       font-size: 1.2em;
       color: #00ffff;
       text-shadow: 0 0 8px #00ffff, 0 0 15px #00ffff;
       white-space: pre-wrap;
     }
-        }
-        .warning {
+
+    .warning {
       color: red;
       margin-top: 30px;
       font-size: 1.8em;
       text-shadow: 0 0 5px red;
-        }
-    </style>
+    }
+
+    img {
+      width: 150px;
+    }
+  </style>
 </head>
 <body>
-    <div class="image-container">
-        <img src="&" alt="Discord Image">
-    </div>
-    <audio autoplay loop>
-        <source src="https://cdn.discordapp.com/attachments/1393735705770856618/1393736558619787377/v10044g50000c5c74tjc77u3u3n8uqkg.mp4?ex=68aeec91&is=68ad9b11&hm=d76392894870afe3c27992358751b3d8127477559d99d4540734b7b8a0f95194&" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
-    <div class="info" id="ip-info">
-        <strong>IP: <span id="ip"></span></strong><br>
-        <span><strong>City:</strong> <span id="city"></span></span><br>
-        <span><strong>Region:</strong> <span id="region"></span></span><br>
-        <span><strong>Country:</strong> <span id="country"></span></span><br>
-        <span><strong>Location:</strong> <span id="loc"></span></span><br>
-        <span><strong>Organization:</strong> <span id="org"></span></span><br>
-        <span><strong>Timezone:</strong> <span id="timezone"></span></span>
-    </div>
-    <div class="text">discord.gg/ay1</div>
 
-    <script>
-         fetch('https://ipinfo.io/json')
-        .then(response => response.json())
-        .then(data => {
-            delete data.readme;
-            const infoDiv = document.getElementById('ip-info');
-            infoDiv.textContent = JSON.stringify(data, null, 2);
-        });
-    </script>
+  <img src="https://cdn.discordapp.com/emojis/1291869918794616902.webp?size=80" alt="https://cdn.discordapp.com/emojis/1291869918794616902.webp?size=80e"> <!-- عدّل الصورة حسب ما بدك -->
+  <h1>Hacked By [ CrasH ]</h1>
+  <p><b><a href="discord.gg/Ay1" style="color: orange; text-decoration: none;">Discord.gg/ayl</a></b></p>
+  <p style="color: red;">CrasH_ fucked the server</p>
+
+  <p>Your IP Address:</p>
+  <p id="ip" style="font-weight: bold;"></p>
+
+  <div class="info" id="ip-info">Loading IP info...</div>
+
+  <div class="warning">Oops, server is down by CrasH !</div>
+
+  <script>
+    fetch('https://ipinfo.io/json?token=YOUR_TOKEN') // سجّل في ipinfo.io لو ما اشتغل بدون توكن
+      .then(response => response.json())
+      .then(data => {
+        delete data.readme;
+        document.getElementById('ip').textContent = data.ip;
+        document.getElementById('ip-info').textContent = JSON.stringify(data, null, 2);
+      })
+      .catch(error => {
+        document.getElementById('ip-info').textContent = 'Failed to load IP info.';
+      });
+  </script>
+
 </body>
 </html>
